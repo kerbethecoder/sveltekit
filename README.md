@@ -1,5 +1,10 @@
 <!-- <img|title here> -->
+
+![image](static/snap.png)
+
 <!-- shield.io, 'project built with' -->
+
+![Static Badge](https://img.shields.io/badge/sveltekit-v2%2e0%2e0-f96743) ![Static Badge](https://img.shields.io/badge/tailwindcss-v3%2e4%2e7-38bdf8)
 
 "[Svelte](https://svelte.dev/) is a tool for building web applications. Like other user interface frameworks, it allows you to build your app _declaratively_ out of components that combine markup, styles, and behaviours."
 
@@ -34,10 +39,10 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  kit: {
-    adapter: adapter(),
-  },
-  preprocess: vitePreprocess(),
+	kit: {
+		adapter: adapter()
+	},
+	preprocess: vitePreprocess()
 };
 
 export default config;
@@ -49,11 +54,11 @@ export default config;
 // tailwind.config.js
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{html,js,svelte,ts}'],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
+	theme: {
+		extend: {}
+	},
+	plugins: []
 };
 ```
 
@@ -71,7 +76,7 @@ export default {
 ```html
 <!-- +layout.svelte -->
 <script>
-  import '../app.css';
+	import '../app.css';
 </script>
 
 <slot />
@@ -89,9 +94,9 @@ export default {
 <h1 class="text-3xl font-bold underline">Hello world!</h1>
 
 <style lang="postcss">
-  :global(html) {
-    background-color: theme(colors.gray.100);
-  }
+	:global(html) {
+		background-color: theme(colors.gray.100);
+	}
 </style>
 ```
 
@@ -154,9 +159,9 @@ npm install gh-pages --save-dev
 
 ```json
 {
-  "scripts": {
-    "deploy": "npm run build && gh-pages -d build -t true"
-  }
+	"scripts": {
+		"deploy": "npm run build && gh-pages -d build -t true"
+	}
 }
 ```
 
