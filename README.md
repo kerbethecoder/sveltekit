@@ -1,9 +1,6 @@
 ![image](static/snap.png)
 
 ![Static Badge](https://img.shields.io/badge/sveltekit-v2%2e0%2e0-f96743) ![Static Badge](https://img.shields.io/badge/tailwindcss-v3%2e4%2e7-38bdf8)
-![image](static/snap.png)
-
-![Static Badge](https://img.shields.io/badge/sveltekit-v2%2e0%2e0-f96743) ![Static Badge](https://img.shields.io/badge/tailwindcss-v3%2e4%2e7-38bdf8)
 
 "[Svelte](https://svelte.dev/) is a tool for building web applications. Like other user interface frameworks, it allows you to build your app _declaratively_ out of components that combine markup, styles, and behaviours."
 
@@ -21,7 +18,7 @@ This guide provides a first-hand experience on building a Svelte project using [
  cd project_name
 ```
 
-**2. Install Tailwind CSS and sveltekit static adapter.** <small>[reference here](https://kit.svelte.dev/docs/adapter-static)</small>
+**2. Install Tailwind CSS and `sveltekit static adapter`.**
 
 ```bash
  # terminal
@@ -30,7 +27,7 @@ This guide provides a first-hand experience on building a Svelte project using [
  npx tailwindcss init -p
 ```
 
-**3. Enable use of PostCSS in \<style> blocks.** <small>[reference here](https://tailwindcss.com/docs/guides/sveltekit)</small>
+**3. Configure `svelte config`.**
 
 ```js
 // svelte.config.js
@@ -40,13 +37,28 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   kit: {
-    adapter: adapter()
+    adapter: adapter(),
+    paths: {
+      base: process.env.NODE_ENV === 'production' ? '/sveltekit' : ''
+    }
   },
   preprocess: vitePreprocess()
 };
 
 export default config;
 ```
+
+> [!NOTE]
+>
+> Now you can add relative **base** paths for your routing like [this](src/routes/Header.svelte).
+
+```js
+<script>import {base} from '$app/paths'</script>
+
+<a href="{base}/about">About</a>
+```
+
+For the modules (e.g. `$app/paths`), check the [official documentation](https://kit.svelte.dev/docs/modules).
 
 **4. Configure your template paths.**
 
@@ -85,7 +97,6 @@ export default {
 **7. Start your build process.**
 
 ```bash
-# terminal
 # terminal
  npm run dev
 ```
@@ -162,7 +173,7 @@ npm install gh-pages --save-dev
 ```json
 {
   "scripts": {
-    "deploy": "npm run build && gh-pages -d build"
+    "deploy": "npm run build && gh-pages -d build -t true"
   }
 }
 ```

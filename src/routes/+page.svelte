@@ -2,7 +2,7 @@
   import Counter from './Counter.svelte';
   // import welcome from '$lib/images/svelte-welcome.webp';
   // import welcome_fallback from '$lib/images/svelte-welcome.png';
-  import welcome from '../lib/images/svelte-welcome.png';
+  import welcome from '$lib/images/svelte-welcome.png';
 </script>
 
 <svelte:head>
@@ -11,12 +11,9 @@
 
 <section>
   <h1>
-    <img src={welcome} alt="Welcome" />
-    <!-- <span class="welcome"> -->
-    <!-- <picture>
-        <source srcset={welcome} type="image/webp" />
-      </picture> -->
-    <!-- </span> -->
+    <span class="welcome">
+      <img src={welcome} alt="Welcome" />
+    </span>
 
     to your new<br /> <span class="text-orange-600 font-bold">SvelteKit</span> app
   </h1>
@@ -41,7 +38,7 @@
     width: 100%;
   }
 
-  /* .welcome {
+  .welcome {
     display: block;
     position: relative;
     width: 100%;
@@ -55,5 +52,5 @@
     height: 100%;
     top: 0;
     display: block;
-  } */
+  }
 </style>
