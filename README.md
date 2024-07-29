@@ -181,6 +181,11 @@ npm install gh-pages --save-dev
 `-t true` flag addition is based on this [discussion](https://github.com/tschaub/gh-pages/issues/315) regarding the the dotfiles (.nojekyll) not being pushed in the repo for deployment.
 
 **4. Create and configure a new branch for `gh-pages`.**
+
+> [!IMPORTANT]
+>
+> Make sure that you have committed your changes before doing this. All untracked and staged files may be deleted.
+> 
 I like to do this manually. If there is some automated way, feel free to let me know by any means.
 
 ```bash
