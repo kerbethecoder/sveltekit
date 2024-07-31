@@ -148,7 +148,7 @@ my-project/
 
 ## 🛫 How to deploy to GitHub Pages
 
-Deploying to github pages is totally up to you, be it through **[GitHub Actions](https://docs.github.com/en/actions/deployment/about-deployments/deploying-with-github-actions)**, or via **[gh-pages](https://www.npmjs.com/package/gh-pages)** without jekyll, or manually.
+Deploying to github pages is totally up to you, be it through **[GitHub Actions](https://docs.github.com/en/actions/deployment/about-deployments/deploying-with-github-actions)**, or via **[gh-pages](https://www.npmjs.com/package/gh-pages)** package without jekyll, or manually.
 
 > [!NOTE]
 >
